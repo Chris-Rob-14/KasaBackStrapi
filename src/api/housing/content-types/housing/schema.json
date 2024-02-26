@@ -1,0 +1,62 @@
+{
+  "kind": "collectionType",
+  "collectionName": "housings",
+  "info": {
+    "singularName": "housing",
+    "pluralName": "housings",
+    "displayName": "housing",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "cover": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "pictures": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "text"
+    },
+    "rating": {
+      "type": "integer"
+    },
+    "location": {
+      "type": "string"
+    },
+    "equipments": {
+      "type": "text"
+    },
+    "tags": {
+      "type": "text"
+    },
+    "host": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::host.host",
+      "inversedBy": "fk_housing_id"
+    }
+  }
+}
